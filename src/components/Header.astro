@@ -1,0 +1,12 @@
+---
+interface Props {
+  showBlogLink?: boolean;
+}
+
+const { showBlogLink = true } = Astro.props;
+---
+<div id="header">
+  <span class="bold">Kayur Patel</span> |
+  <a href="/">Home</a>
+  {showBlogLink && <Fragment> | <a href="/blog/">Blog</a></Fragment>}
+</div>

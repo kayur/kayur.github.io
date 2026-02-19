@@ -116,8 +116,10 @@ a {
 }
 
 #reader-body img {
+  display: block;
   max-width: 100%;
-  margin: 16px 0;
+  height: auto;
+  margin: 16px auto;
 }
 
 #reader-body ul, #reader-body ol {

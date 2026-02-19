@@ -1,0 +1,52 @@
+---
+import Header from '../components/Header.astro';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    date: Date;
+    description: string;
+    readTime: string;
+    image?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+const formattedDate = frontmatter.date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = frontmatter.image
+  ? new URL(frontmatter.image, Astro.site).href
+  : undefined;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{frontmatter.title} — Kayur Patel</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={frontmatter.title}>
+    <meta property="og:description" content={frontmatter.description}>
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:url" content={canonicalURL.href}>
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="/blog/blog.css">
+  </head>
+  <body>
+    <Header />
+
+    <div id="reader">
+      <h1 id="reader-title">{frontmatter.title}</h1>
+      <p id="reader-date">{formattedDate}</p>
+      <div id="reader-body">
+        <slot />
+      </div>
+    </div>
+  </body>
+</html>

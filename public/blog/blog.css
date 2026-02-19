@@ -1,0 +1,147 @@
+* {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+a {
+  color: inherit;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+/* Header — matches main site contact bar */
+#header {
+  padding: 16px;
+  font-size: 16pt;
+  font-weight: 100;
+  text-align: center;
+  background: #232931;
+  color: white;
+}
+
+#header a {
+  color: white;
+}
+
+/* Post list */
+#posts {
+  padding: 16px 32px;
+  background: #eaeaeb;
+}
+
+.post-item {
+  display: block;
+  padding: 12px 0;
+  border-bottom: 1px solid #d0d0d0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-item:last-child {
+  border-bottom: none;
+}
+
+.post-item:hover .post-title {
+  text-decoration: underline;
+}
+
+.post-title {
+  font-weight: 500;
+  font-size: 14pt;
+  margin: 0;
+}
+
+.post-meta {
+  font-size: 10pt;
+  color: #666;
+  margin: 4px 0 0 0;
+}
+
+.post-summary {
+  font-size: 11pt;
+  color: #444;
+  margin: 4px 0 0 0;
+}
+
+/* Reader */
+#reader {
+  padding: 16px 32px 48px;
+  background: #d7d6cb;
+}
+
+#reader[hidden] {
+  display: none;
+}
+
+#reader-nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10pt;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #bbb;
+  margin-bottom: 16px;
+}
+
+#reader-title {
+  font-size: 28pt;
+  margin: 0 0 4px 0;
+}
+
+#reader-date {
+  font-size: 10pt;
+  color: #666;
+  margin: 0 0 24px 0;
+}
+
+#reader-body {
+  line-height: 1.7;
+  font-size: 12pt;
+}
+
+#reader-body h1, #reader-body h2, #reader-body h3, #reader-body h4 {
+  margin-top: 28px;
+  margin-bottom: 8px;
+}
+
+/* First image (title/hero) — full bleed */
+#reader-body > p:first-child img,
+#reader-body > img:first-child {
+  display: block;
+  width: calc(100% + 64px);
+  max-width: none;
+  height: auto;
+  margin: 0 -32px 16px -32px;
+}
+
+/* Other images — flow with text, constrained size */
+#reader-body img {
+  max-width: 80%;
+  height: auto;
+  margin: 12px auto;
+  display: block;
+}
+
+#reader-body ul, #reader-body ol {
+  padding-left: 24px;
+}
+
+#reader-body li {
+  margin-bottom: 8px;
+}
+
+#reader-body a {
+  color: black;
+  text-decoration: underline;
+}
