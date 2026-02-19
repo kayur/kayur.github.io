@@ -1,5 +1,5 @@
 * {
-  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   box-sizing: border-box;
 }
 
@@ -11,6 +11,7 @@ html, body {
 body {
   max-width: 1000px;
   margin: 0 auto;
+  font-weight: 300;
 }
 
 a {
@@ -59,18 +60,18 @@ a {
 
 .post-title {
   font-weight: 500;
-  font-size: 14pt;
+  font-size: 1.1rem;
   margin: 0;
 }
 
 .post-meta {
-  font-size: 10pt;
+  font-size: 0.8rem;
   color: #666;
   margin: 4px 0 0 0;
 }
 
 .post-summary {
-  font-size: 11pt;
+  font-size: 0.9rem;
   color: #444;
   margin: 4px 0 0 0;
 }
@@ -88,35 +89,37 @@ a {
 #reader-nav {
   display: flex;
   justify-content: space-between;
-  font-size: 10pt;
+  font-size: 0.8rem;
   padding-bottom: 16px;
   border-bottom: 1px solid #bbb;
   margin-bottom: 16px;
 }
 
 #reader-title {
-  font-size: 28pt;
+  font-size: 2rem;
+  font-weight: 700;
   margin: 0 0 4px 0;
 }
 
 #reader-date {
-  font-size: 10pt;
+  font-size: 0.8rem;
   color: #666;
   margin: 0 0 24px 0;
 }
 
 #reader-body {
   line-height: 1.7;
-  font-size: 12pt;
+  font-size: 1rem;
 }
 
 #reader-body h1, #reader-body h2, #reader-body h3, #reader-body h4 {
   margin-top: 28px;
   margin-bottom: 8px;
+  font-weight: 700;
 }
 
-/* First image (title/hero) — full bleed */
-#reader-body > p:first-child img,
+/* Hero image — full bleed if it's the first image before any subheading */
+#reader-body > p:has(> img):not(h2 ~ p):not(p:has(> img) ~ p) img,
 #reader-body > img:first-child {
   display: block;
   width: calc(100% + 64px);
@@ -133,6 +136,14 @@ a {
   display: block;
 }
 
+/* Image captions — italic-only paragraphs */
+#reader-body > p:has(> em:only-child) {
+  text-align: center;
+  margin-top: -4px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
 #reader-body ul, #reader-body ol {
   padding-left: 24px;
 }
@@ -144,4 +155,49 @@ a {
 #reader-body a {
   color: black;
   text-decoration: underline;
+}
+
+/* Prev / Next post navigation — top of post */
+#post-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #bbb;
+  margin-bottom: 16px;
+  font-size: 0.8rem;
+}
+
+.post-nav-link {
+  flex: 1;
+}
+
+.post-nav-link a {
+  text-decoration: none;
+  color: #666;
+}
+
+.post-nav-link a:hover {
+  color: black;
+}
+
+.post-nav-prev {
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 8px;
+}
+
+.post-nav-center {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.post-nav-next {
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 8px;
 }

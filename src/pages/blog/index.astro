@@ -1,36 +1,20 @@
 ---
 import { getCollection } from 'astro:content';
-import Header from '../../components/Header.astro';
 
 const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const latestSlug = posts[0].id.replace(/\.md$/, '');
+const latestUrl = `/blog/${latestSlug}/`;
 ---
 <!doctype html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kayur Patel — Blog</title>
-    <link rel="stylesheet" href="/blog/blog.css">
+    <meta http-equiv="refresh" content={`0;url=${latestUrl}`}>
+    <link rel="canonical" href={latestUrl}>
+    <title>Redirecting…</title>
   </head>
   <body>
-    <Header showBlogLink={false} />
-
-    <div id="posts">
-      {posts.map((post) => {
-        const date = post.data.date.toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        });
-        return (
-          <a href={`/blog/${post.id.replace(/\.md$/, '')}/`} class="post-item">
-            <p class="post-title">{post.data.title}</p>
-            <p class="post-meta">{date}</p>
-            <p class="post-summary">{post.data.description}</p>
-          </a>
-        );
-      })}
-    </div>
+    <a href={latestUrl}>Go to latest post</a>
   </body>
 </html>

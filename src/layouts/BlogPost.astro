@@ -9,9 +9,11 @@ interface Props {
     readTime: string;
     image?: string;
   };
+  prev?: { title: string; slug: string } | null;
+  next?: { title: string; slug: string } | null;
 }
 
-const { frontmatter } = Astro.props;
+const { frontmatter, prev, next } = Astro.props;
 const formattedDate = frontmatter.date.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
@@ -42,6 +44,22 @@ const ogImage = frontmatter.image
     <Header />
 
     <div id="reader">
+      <nav id="post-nav">
+        <div class="post-nav-link post-nav-prev">
+          {prev && (
+            <a href={`/blog/${prev.slug}/`} title={prev.title}>← {prev.title}</a>
+          )}
+        </div>
+        <div class="post-nav-link post-nav-center">
+          <a href="/blog/all/">All Posts</a>
+        </div>
+        <div class="post-nav-link post-nav-next">
+          {next && (
+            <a href={`/blog/${next.slug}/`} title={next.title}>{next.title} →</a>
+          )}
+        </div>
+      </nav>
+
       <h1 id="reader-title">{frontmatter.title}</h1>
       <p id="reader-date">{formattedDate}</p>
       <div id="reader-body">

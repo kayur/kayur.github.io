@@ -18,7 +18,7 @@ I invested the time. I made it to the last boss, and then I froze. I thought: �
 
 I need to reprogram myself. This year, finishing more things is the overarching theme. Done is better than perfect, which brings me to my first goal.
 
-- **Maintain a** [**bullet journal**](https://youtu.be/fm15cmYU0IM)** for 6 months.** I make to-do lists, and like most people who make to-do lists, I constantly lose track of tasks. While it’s [ok to lose tasks](https://www.theguardian.com/lifeandstyle/2017/may/10/the-psychology-of-the-to-do-list-why-your-brain-loves-ordered-task), I want to see what might happen if I lost fewer tasks. Would I finish more things? I need structure, and a bullet journal is basically a structured to-do list management system. In theory, it should help surface important tasks that I might have forgotten.
+- **Maintain a [bullet journal](https://youtu.be/fm15cmYU0IM) for 6 months.** I make to-do lists, and like most people who make to-do lists, I constantly lose track of tasks. While it’s [ok to lose tasks](https://www.theguardian.com/lifeandstyle/2017/may/10/the-psychology-of-the-to-do-list-why-your-brain-loves-ordered-task), I want to see what might happen if I lost fewer tasks. Would I finish more things? I need structure, and a bullet journal is basically a structured to-do list management system. In theory, it should help surface important tasks that I might have forgotten.
 
 
 ![Here is a bullet journal created by a human with more time and artistic talent than me. Mine will look less twee as my goal is to spend more time finishing things I start and less time color-coding my bowel movements. [from instagram: [thngocbich](https://www.instagram.com/thngocbich/)]](/blog/images/2019-goals-finish-more-things/1.png)

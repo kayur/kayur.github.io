@@ -26,7 +26,7 @@ No pretty charts this year. I declared tracking bankruptcy sometime in September
 - **Pravin finds a sport he enjoys.** He’s now in a level two gymnastics class. I really wanted him to be into team sports like soccer, for all the stereotypical reasons. But I guess we can’t control what our children are into.
 - **Lose two inches off my waist.** tried hard to do it on my own, but work got stressful and stress eating is difficult for me to manage. Eventually Cat found a way to get some Zepbound through the internet. Super effective. Fitting into clothes is really underrated.
 - **Two friend trips and two family trips.** We did way more. The whole family went to Disney, the Oregon Coast, and Palm Springs. Cat and I did a solo trip to New York. There was a big family reunion in Seattle. Pravin and I went to Europe together. For a lot of these trips we saw both friends and family, including family I hadn’t seen in 20 years in London.
-- **Read 26 books** **at least** **4 with Pravin.** Ended up at 37 books. Pravin and I read five [Amulet](https://www.goodreads.com/book/show/1238684.The_Stonekeeper) graphic novels together and listened to the first four Harry Potter audiobooks while traveling to Europe.
+- **Read 26 books, at least 4 with Pravin.** Ended up at 37 books. Pravin and I read five [Amulet](https://www.goodreads.com/book/show/1238684.The_Stonekeeper) graphic novels together and listened to the first four Harry Potter audiobooks while traveling to Europe.
 
 
 ## Partial Successes
