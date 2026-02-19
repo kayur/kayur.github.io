@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kayur Patel — Blog</title>
+    <link rel="stylesheet" href="blog.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <span class="bold">Kayur Patel</span> |
+      <a href="/">Home</a> |
+      <a href="/blog/">Blog</a>
+    </div>
+
+    <div id="reader">
+      <h1 id="reader-title"></h1>
+      <p id="reader-date"></p>
+      <div id="reader-body"></div>
+    </div>
+
+    <script>
+      const slug = new URLSearchParams(location.search).get('slug');
+      if (!slug) { location.href = '/blog/'; }
+
+      fetch('posts/index.json')
+        .then(r => r.json())
+        .then(posts => {
+          const post = posts.find(p => p.slug === slug);
+          if (!post) return;
+
+          const fmt = new Intl.DateTimeFormat('en-US', {
+            year: 'numeric', month: 'long', day: 'numeric',
+          });
+
+          document.title = post.title + ' — Kayur Patel';
+          document.getElementById('reader-title').textContent = post.title;
+          document.getElementById('reader-date').textContent =
+            fmt.format(new Date(post.published)) + ' · ' + post.readTime;
+
+          return fetch(post.source);
+        })
+        .then(r => r.text())
+        .then(md => {
+          document.getElementById('reader-body').innerHTML =
+            marked.parse(md, { mangle: false, headerIds: false });
+        });
+    </script>
+  </body>
+</html>

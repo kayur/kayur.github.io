@@ -1,0 +1,30 @@
+# 2019 Recap
+
+![Taken during our last trip to North Carolina. My son is likely pondering some way to escape our grasp and stay with his grandparents who cater to his every whim.](images/2019-recap/1.png)
+*Taken during our last trip to North Carolina. My son is likely pondering some way to escape our grasp and stay with his grandparents who cater to his every whim.*
+
+It’s been an eventful year. I watched my son evolve from helpless slug into a willful agent of destruction. [I presented at WWDC](https://developer.apple.com/videos/play/wwdc2019/803/). I started managing a research team. I took monthly cross-country flights to visit my dad who was diagnosed with stage IV stomach cancer.
+
+2019’s been a lot. Maybe I’ll find some time to talk about it in another blog post, but not now. Now I’m just gonna reflect on plans I set earlier this year.
+
+**Success**
+
+- **Maintain a **[**bullet journal**](https://youtu.be/fm15cmYU0IM)** for 6 months. **8 out of the 12 months ain’t bad. There are a lot of different logging and tracking tools that work with bullet journals. I tried weekly updates, habit trackers, and monthly calendars. None of those stuck. Task tracking did stick, and it made a difference. The bullet journal system has a [great algorithm for creating, reflecting on, and triaging tasks on a monthly cadence](https://bulletjournal.com/pages/migration). It helped me avoid the common problem of exploding TODO lists. I strongly recommend trying it out.
+- **Read 26 books (8 non-fiction):** I read 36 books and 23 of those were non-fiction. Reading non-fiction was easier this year because I created a book club for new managers at work and started listening to audiobooks on my commute. Some books were [beautiful](https://www.goodreads.com/book/show/9809.Invisible_Cities); some [helped me cope](https://www.goodreads.com/book/show/7170627-the-emperor-of-all-maladies); some [helped me grow](https://www.goodreads.com/book/show/18077903-creativity-inc), and some were just [well-written indulgences](https://www.goodreads.com/book/show/35674191-red-country). In all, it was a good year for reading.
+- **See family 4x. **I saw my family 10 times. In February, my dad tested positive for stomach cancer. The [prognosis was bad](https://www.healthline.com/health/stomach-cancer-stage-4#life-expectancy), so I decided to increase the amount of time my dad got to see his grandson. I flew to NC once a month. I have so much to say about cancer and coping and cross-country flights with babies. Reach out; I’ll tell you about it.
+
+**Some Progress**
+
+- **Practice an active hobby ~1/week for 6mo. **I converted my bike commute to a run/bike commute — run one direction and bike the other. I run between 20–35 miles a week. I’ve been more active, but with my travel schedule, I haven’t taken any classes. I intended to take a class to learn a new physical skill, therefore this only a partially completed goal.
+- **Eat meat max 1 meal a day for 3 months. **I lasted for two months. Ultimately, I can’t resist meat dishes at restaurants, and with a new kid, we eat out fairly often.
+- **Track what I eat at work for 3 months. **I tracked my food for two months. I was legit, bought a food scale and everything. Tracking was [super effective](https://knowyourmeme.com/memes/its-super-effective). I avoided food binges and felt healthier. But tracking is tedious and easily dropped when I’m overwhelmed or if my routine changes.
+- **15% body fat. **Second-year in a row failing to meet this goal. It’s hard. I slimmed down around 16–17% body fat when I was tracking food and running to work. Working out every day is now my default, but tracking every day is not sustainable. I need a different way to build better food habits.
+
+**No Progress**
+
+- **Schedule at least 2 hours of hobby/project time each week.** I overcommitted to hanging out with folks, and getting project time has been hard with a kid. If I am gonna do a hobby, I need something or someone to hold me accountable, or I need a regularly scheduled event that becomes a habit.
+- **Take a writing class. **Did not happen. Routine travel made scheduling recurring commitments hard.
+- **Write one blog post about management and writing.** I read a ton of management books. At some point they all blur together. I suppose I could have written something but didn’t feel like my comments would have useful insights without some analysis.
+- **Build something using a new programming language, library, or technique. **This goal was too close to work. I wanted to program for fun, but it was hard to rationalize when I could program for work and push my projects forward.
+
+I’d like more successes, but overall I’m happy, especially considering the unexpected complexities of the year. I’m working on my 2020 goals and hope to address some of the issues with routine and habit from last year. Stay tuned.
