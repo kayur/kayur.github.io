@@ -125,21 +125,30 @@ a {
   width: calc(100% + 64px);
   max-width: none;
   height: auto;
-  margin: 0 -32px 16px -32px;
+  margin: 0 -32px 4px -32px;
 }
 
 /* Other images — flow with text, constrained size */
 #reader-body img {
   max-width: 80%;
   height: auto;
-  margin: 12px auto;
+  margin: 12px auto 4px;
   display: block;
 }
 
-/* Image captions — italic-only paragraphs */
+/* Image captions — italic-only paragraphs (separate <p>) */
 #reader-body > p:has(> em:only-child) {
   text-align: center;
-  margin-top: -4px;
+  margin-top: 0;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Image captions — italic text inside same paragraph as image */
+#reader-body > p:has(> img) > em {
+  display: block;
+  text-align: center;
+  margin-top: 0;
   font-size: 0.8rem;
   color: #666;
 }
