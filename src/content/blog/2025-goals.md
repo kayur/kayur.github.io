@@ -7,7 +7,11 @@ tags:
   - Goals
   - Life
   - Family
+image: "/blog/images/2025-goals/1.png"
 ---
+
+![Numbers are still hard sometimes. Never change AI.](/blog/images/2025-goals/1.png)
+*Numbers are still hard sometimes. Never change AI.*
 
 I know, I know — it’s almost March. The year started off busy, and it doesn’t look like it’s slowing down anytime soon. I wrote these goals at the end of last year, but actually getting them into a blog post took longer than expected.
 
