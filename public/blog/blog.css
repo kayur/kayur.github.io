@@ -162,9 +162,9 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 16px;
+  padding: 0 32px 16px;
+  margin: 0 -32px 16px;
   border-bottom: 1px solid #bbb;
-  margin-bottom: 16px;
   font-size: 0.8rem;
 }
 
