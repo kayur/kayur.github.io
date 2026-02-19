@@ -1,10 +1,13 @@
+---
+layout: null
+---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kayur Patel — Blog</title>
-    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="/blog/blog.css">
   </head>
   <body>
     <div id="header">
@@ -12,28 +15,14 @@
       <a href="/">Home</a>
     </div>
 
-    <div id="posts"></div>
-
-    <script>
-      fetch('posts/index.json')
-        .then(r => r.json())
-        .then(posts => {
-          posts.sort((a, b) => new Date(b.published) - new Date(a.published));
-          const fmt = new Intl.DateTimeFormat('en-US', {
-            year: 'numeric', month: 'long', day: 'numeric',
-          });
-          const container = document.getElementById('posts');
-          posts.forEach(p => {
-            const a = document.createElement('a');
-            a.href = 'post.html?slug=' + p.slug;
-            a.className = 'post-item';
-            a.innerHTML =
-              '<p class="post-title">' + p.title + '</p>' +
-              '<p class="post-meta">' + fmt.format(new Date(p.published)) + ' · ' + p.readTime + '</p>' +
-              '<p class="post-summary">' + p.summary + '</p>';
-            container.appendChild(a);
-          });
-        });
-    </script>
+    <div id="posts">
+      {% for post in site.posts %}
+      <a href="{{ post.url }}" class="post-item">
+        <p class="post-title">{{ post.title }}</p>
+        <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }} · {{ post.readTime }}</p>
+        <p class="post-summary">{{ post.description }}</p>
+      </a>
+      {% endfor %}
+    </div>
   </body>
 </html>

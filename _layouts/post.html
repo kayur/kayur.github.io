@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} — Kayur Patel</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    {% if page.image %}<meta property="og:image" content="{{ page.image | prepend: site.url }}">{% endif %}
+    <meta property="og:url" content="{{ page.url | prepend: site.url }}">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="/blog/blog.css">
+  </head>
+  <body>
+    <div id="header">
+      <span class="bold">Kayur Patel</span> |
+      <a href="/">Home</a> |
+      <a href="/blog/">Blog</a>
+    </div>
+
+    <div id="reader">
+      <h1 id="reader-title">{{ page.title }}</h1>
+      <p id="reader-date">{{ page.date | date: "%B %-d, %Y" }} · {{ page.readTime }}</p>
+      <div id="reader-body">
+        {{ content }}
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+title: Kayur Patel
+url: https://kayur.github.io
+markdown: kramdown
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      permalink: /blog/:title/
+
+exclude:
+  - blog/scripts/
+  - blog/posts/
+  - README.md
+  - "*.py"
