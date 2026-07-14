@@ -17,7 +17,7 @@ const posts = (await getCollection('blog'))
     <!-- End Cloudflare Web Analytics -->
   </head>
   <body>
-    <Header showBlogLink={false} />
+    <Header />
 
     <div id="posts">
       {posts.map((post) => {

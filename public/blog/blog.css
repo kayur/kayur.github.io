@@ -11,7 +11,8 @@ html, body {
 body {
   max-width: 1000px;
   margin: 0 auto;
-  font-weight: 300;
+  font-weight: 400;
+  color: #232323;
 }
 
 a {
@@ -19,7 +20,7 @@ a {
 }
 
 .bold {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* Header — matches main site contact bar */
@@ -34,6 +35,11 @@ a {
 
 #header a {
   color: white;
+  text-decoration: none;
+}
+
+#header a:hover {
+  text-decoration: underline;
 }
 
 /* Post list */
@@ -91,7 +97,7 @@ a {
   justify-content: space-between;
   font-size: 0.8rem;
   padding-bottom: 16px;
-  border-bottom: 1px solid #bbb;
+  border-bottom: 1px solid #aaa99f;
   margin-bottom: 16px;
 }
 
@@ -103,7 +109,7 @@ a {
 
 #reader-date {
   font-size: 0.8rem;
-  color: #666;
+  color: #555;
   margin: 0 0 24px 0;
 }
 
@@ -112,10 +118,15 @@ a {
   font-size: 1rem;
 }
 
+#reader-body strong {
+  font-weight: 600;
+}
+
 #reader-body h1, #reader-body h2, #reader-body h3, #reader-body h4 {
-  margin-top: 28px;
-  margin-bottom: 8px;
-  font-weight: 700;
+  margin-top: 32px;
+  margin-bottom: 10px;
+  font-weight: 650;
+  line-height: 1.25;
 }
 
 /* Hero image — full bleed if it's the first image before any subheading */
@@ -139,18 +150,18 @@ a {
 /* Image captions — italic-only paragraphs (separate <p>) */
 #reader-body > p:has(> em:only-child) {
   text-align: center;
-  margin-top: 0;
+  margin-top: 6px;
   font-size: 0.8rem;
-  color: #666;
+  color: #555;
 }
 
 /* Image captions — italic text inside same paragraph as image */
 #reader-body > p:has(> img) > em {
   display: block;
   text-align: center;
-  margin-top: 0;
+  margin-top: 6px;
   font-size: 0.8rem;
-  color: #666;
+  color: #555;
 }
 
 #reader-body ul, #reader-body ol {
@@ -183,7 +194,7 @@ a {
 
 .post-nav-link a {
   text-decoration: none;
-  color: #666;
+  color: #555;
 }
 
 .post-nav-link a:hover {
