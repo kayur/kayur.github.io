@@ -1,241 +1,381 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Kayur Patel</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <title>Kayur Patel</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kayur Patel — researcher and builder working at the intersection of machine learning, design, and product.">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <!-- Javascript Dependencies -->
-    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-    <script src="bibtexParse.js"></script>
-    <!-- Cloudflare Web Analytics -->
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "aef063b1528b4901bd79f57e475da52b"}'></script>
-    <!-- End Cloudflare Web Analytics -->
-  </head>
-<style>
-    html,
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "aef063b1528b4901bd79f57e475da52b"}'></script>
+  <script src="bibtexParse.js"></script>
+
+  <style>
+    :root {
+      --bg:         #F5F4EF;
+      --text:       #1C1A18;
+      --muted:      #78746E;
+      --accent:     #2A5298;
+      --border:     #D8D5CE;
+      --body-text:  #3D3A36;
+
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; }
+
     body {
-        height: 100%;
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    html {
-        display: table;
-        margin: auto;
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Header ─────────────────────────────────────────────────────── */
+    header {
+      background: var(--text);
+      color: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
     }
 
-    body {
-        display: table-cell;
-        vertical-align: middle;
-        font-weight: 300;
-        max-width: 1000px;
+    .site-name {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--bg);
     }
 
-    #splash {
-        width: 100%;
+    header nav a {
+      color: var(--bg);
+      opacity: 0.65;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 400;
     }
 
-    #contact {
-        padding: 16px;
-        font-size: 16pt;
-        font-weight: 100;
-        text-align: center;
-        background: #232931;
-        color: white;
-    }
-    div#contact a {
-        color: white;
-    }
-    .bold {
-        font-weight: 500;
+    header nav a:hover { opacity: 1; text-decoration: none; }
+
+    /* ── Main ────────────────────────────────────────────────────────── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 40px;
     }
 
-    #about {
-        padding: 16px 32px;
-        background: #BCC4C5;
+    /* ── Intro ───────────────────────────────────────────────────────── */
+    .intro {
+      padding: 60px 0 52px;
+      display: grid;
+      grid-template-columns: 1fr 176px;
+      gap: 48px;
+      align-items: start;
     }
 
-    #bio {
-        padding: 16px 32px;
-        background:#d7d6cb;
+    .intro-headline {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 22px;
+      letter-spacing: -0.01em;
     }
 
-    #publications {
-        padding: 0px 32px 16px 32px;
-        background: #eaeaeb;
+    .intro-headline em {
+      font-style: italic;
     }
-    a {
-        color: black;
-    }
-    span.pdf {
-        text-decoration: underline;
-    }
-    div.paper {
-        padding-bottom: 8px;
-    }
-    div.pubheader, div.bioheader {
-        font-size: 12pt;
-        font-weight: 700;
-        padding-top: 16px;
-    }
-    img.external-link {
-       content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF1SURBVGhD7ZnLTQNBEEQdA1fghkiNMCAePqGQhm8gPgFAFdKgUWt2d6prFnOYJ70L2FXVxggkHyaTyeRfcwkf4Qf8Er2FLe5g6/FbylzAF9gK63XkETIPsBWkOuoImU/YCso44ggZO6CT3iNk7IBOzuARxr6ojB3QAcc/w9jVUsYO2EAZT2XsgBXWxi+9nWTsgAXWxvPr/H7rF1vGDmjQM74Qj5Cpn5wKCCjjC/URMnVBKqAiM75QjpCJRVmc8QUeIRPLMowYnyYWqpx0PImlCiPGL/0D2E0s7mXUK8/HW0fE8h5GjSfleekj6nK6xcjxpH5+6og6gG5xA+NzaGY8iTkymYD45z87ntQ5VCYbUI5wxpNs/y9OAN9Oznji9P9gB5jY/XaAid1vB5jY/XaAid1vB5jY/XaAid1vB5jY/XaAid2f+UxgL9+hzBNshZ1Cfsgicw1fYSvwL+WGK5jiHN5D/ghb4Xv6BvnKp8dPJpPJ3hwO36fbOmkvRV87AAAAAElFTkSuQmCC);
-       width: 10pt;
-    }
-    span.proceedings {
-        font-style: italic;
-    }  </style>
-  <script>
 
-  </script>
-  <body>
-    <img id="splash" src="images/me.crop.1000px.png">
-    <div id="contact">
-            <span class="bold">Kayur Patel</span> |
-            <a href="/blog/">Blog</a>
-        <!-- <a href="mailto:&#107;&#97;&#121;&#117;&#114;&#64;&#99;&#115;&#46;&#117;&#119;&#46;&#101;&#100;&#117;">
-            <span style="unicode-bidi:bidi-override; direction: rtl;">ude.wu.sc@ruyak</span>
-        </a> -->
+    .intro-body {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--body-text);
+    }
+
+    .intro-photo {
+      width: 176px;
+      height: 220px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 2px;
+    }
+
+    /* ── Sections ────────────────────────────────────────────────────── */
+    section {
+      border-top: 1px solid var(--border);
+      padding: 44px 0;
+    }
+
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    /* ── Timeline ────────────────────────────────────────────────────── */
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 148px 1fr;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-item:first-child { padding-top: 0; }
+    .timeline-item:last-child  { border-bottom: none; padding-bottom: 0; }
+
+    .timeline-org {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding-top: 1px;
+      color: var(--text);
+    }
+
+    .timeline-desc {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--body-text);
+    }
+
+    .timeline-desc a { color: var(--accent); }
+
+    /* ── Publications ────────────────────────────────────────────────── */
+    .pub-group { margin-bottom: 32px; }
+    .pub-group:last-child { margin-bottom: 0; }
+
+    .pub-group-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .paper {
+      padding: 10px 0;
+      font-size: 0.85rem;
+      line-height: 1.65;
+      border-bottom: 1px solid var(--border);
+      color: var(--body-text);
+    }
+
+    .paper:last-child { border-bottom: none; }
+
+    .paper a { color: inherit; }
+    .paper a:hover .paper-title { text-decoration: underline; }
+
+    .paper-title { color: var(--text); }
+    .paper-venue { font-style: italic; }
+
+    /* ── Footer ──────────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 40px;
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); text-decoration: none; }
+
+    /* ── Responsive ──────────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      header  { padding: 16px 20px; }
+      main    { padding: 0 20px; }
+      footer  { padding: 24px 20px; }
+
+      .intro {
+        grid-template-columns: 1fr;
+        padding: 40px 0 36px;
+        gap: 28px;
+      }
+
+      .intro-photo {
+        width: 120px;
+        height: 150px;
+        order: -1;
+      }
+
+      .intro-headline { font-size: 1.85rem; }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="site-name">Kayur Patel</span>
+  <nav><a href="/blog/">Writing →</a></nav>
+</header>
+
+<main>
+
+  <div class="intro">
+    <div class="intro-text">
+      <h1 class="intro-headline">Researcher.<br>Builder.<br><em>Repeat.</em></h1>
+      <p class="intro-body">
+        I work at Meta Super Intelligence Labs across design, engineering, and product —
+        finding ways to make AI more useful and easier to use. I have been asking the same
+        question for twenty years: why is building software with machine learning still so hard?
+      </p>
+    </div>
+    <img class="intro-photo" src="images/me.crop.1000px.png" alt="Kayur Patel">
+  </div>
+
+  <section>
+    <div class="section-label">Background</div>
+
+    <div class="timeline-item">
+      <div class="timeline-org">Meta</div>
+      <div class="timeline-desc">
+        Joined Meta Super Intelligence Labs after the acquisition of Malleable.
+        Work across design, engineering, and product on next-generation AI experiences.
+        Built a prototyping team and explored multiplayer and contextual AI.
+      </div>
     </div>
 
-    <div id="about">
-        I'm at Meta Super Intelligence Labs. I work across design, engineering, and product to make
-        machine learning more useful and easier to use. I'm motivated by the following observation:
-        <br>
-        <br>
-        Over the last two decades, the machine learning community has made amazing progress.
-        Computers can recognize speech, diagnose cancer, and drive cars. Computers can do things
-        that we could barely imagine years ago. So why aren’t there more products that use
-        machine learning? Why do we need machine learning PhDs to train successful models? Why
-        is building software powered by machine learning so hard? I think about these questions,
-        search for answers, and in the process, end up building software that makes it easier for
-        more people to use machine learning.
-        <br>
+    <div class="timeline-item">
+      <div class="timeline-org">Malleable</div>
+      <div class="timeline-desc">
+        Co-founded Malleable to explore how AI could make groups of people more effective.
+        Built frontier prototypes in deep research, UI generation, and multiplayer AI collaboration.
+        Acquired by Meta before launch.
+      </div>
     </div>
 
-    <div id="bio">
-        I’ve been lucky. I’ve studied at some amazing places, worked with great people, and
-        created things I’m proud of. Happy to tell you the full story over coffee, but here
-        are some highlights:
-
-        <div class='bioheader'>Meta</div>
-        I joined Meta Super Intelligence Labs after Meta acquired Malleable. I work across design,
-        engineering, and product on next-generation AI experiences. I created a prototyping team,
-        and explored multiplayer and contextual AI experiences.
-
-        <div class='bioheader'>Malleable</div>
-        I co-founded Malleable to explore how AI could make groups of people more effective. We built
-        frontier prototypes in deep research, UI generation, and multiplayer AI collaboration, then
-        turned those ideas into a product. Meta acquired the company before launch.
-
-        <div class='bioheader'>Apple</div>
-        I noticed that good machine learning models did not lead to great products. I worked
-        with the design studio to understand how machine learning impacts user experience, and
-        based on that understanding, created machine-learning-based products and experiences
-        that people love. We shared what we learned at
-        <a href="https://developer.apple.com/videos/play/wwdc2019/803/">WWDC</a> and released
-        <a href="https://developer.apple.com/design/human-interface-guidelines/machine-learning">
-        new human-interface guidelines for machine learning</a>.
-
-        <div class='bioheader'>Google</div>
-        I wanted to make it easier for teams to work with data and machine learning, so I started
-        and led the <a href="http://colab.research.google.com">Colaboratory</a> team as part of
-        Google Research, now Google AI. I also got to watch the rise of Google as an AI-first company,
-        help teach the first large scale machine learning and data science courses at Google, and
-        teach one of the first data science courses at Columbia University.
-
-        <div class='bioheader'>University of Washington</div>
-        I noticed that machine learning tools were hard to use and often used improperly. I studied
-        machine learning engineers, understood their workflows, and built tools to make their jobs
-        easier. I wrote a <a href="papers/thesis.pdf"></a>thesis</a> that I’m proud of and whose
-        underlying findings are still relevant a decade later.
-
-        <div class='bioheader'>Stanford</div>
-        I wanted to learn more about machine learning, so I started a machine learning focused masters
-        at Stanford. I happened to be in the room when Stanford decided to build a car for DARPA Grand
-        Challenge and got to write the <a href="papers/icac2005.pdf">first paper from Stanford on self
-        driving cars</a>. I also moonlit in Jeremy Bailenson's virtual reality lab studying how people
-        <a href="papers/presence2006.pdf">learn physical skills in VR settings</a>.
-
-        <div class='bioheader'>Carnegie Mellon</div>
-        A series of disconnected, seemingly random events and interactions led me to study at Carnegie
-        Mellon, take classes in computer science, machine learning, and design, work with a research
-        team that built <a href="videos/symphony.m4v">speech systems on wearable computers with head
-        mounted displays</a>, and apply to graduate school. These experiences set the groundwork for
-        everything I’ve done since.
-
+    <div class="timeline-item">
+      <div class="timeline-org">Apple</div>
+      <div class="timeline-desc">
+        Worked with the design studio to understand how machine learning shapes user experience.
+        Created ML-based products, presented at
+        <a href="https://developer.apple.com/videos/play/wwdc2019/803/">WWDC 2019</a>,
+        and released the
+        <a href="https://developer.apple.com/design/human-interface-guidelines/machine-learning">Human Interface Guidelines for Machine Learning</a>.
+      </div>
     </div>
 
-    <div id="publications">
+    <div class="timeline-item">
+      <div class="timeline-org">Google</div>
+      <div class="timeline-desc">
+        Founded and led the <a href="http://colab.research.google.com">Colaboratory</a> team
+        at Google Research. Taught some of the first large-scale ML and data science courses
+        at Google and at Columbia University.
+      </div>
     </div>
 
-  </body>
-  <script type="text/babel">
+    <div class="timeline-item">
+      <div class="timeline-org">Univ. of Washington</div>
+      <div class="timeline-desc">
+        Studied how machine learning engineers actually work, then built tools to make their
+        jobs easier. Wrote a <a href="papers/thesis.pdf">thesis</a> whose findings are
+        still relevant a decade later.
+      </div>
+    </div>
 
-    fetch('papers.bib').then(response => {
-        return response.text();
-    }).then(text => {
-        const conferenceElems = [];
-        const journalElems = [];
-        const otherElems = [];
-        const thesisElems = [];
+    <div class="timeline-item">
+      <div class="timeline-org">Stanford</div>
+      <div class="timeline-desc">
+        ML-focused masters. Happened to be in the room when Stanford decided to build
+        a car for the DARPA Grand Challenge — wrote the
+        <a href="papers/icac2005.pdf">first Stanford paper on self-driving cars</a>.
+        Also studied <a href="papers/presence2006.pdf">physical skill learning in VR</a>.
+      </div>
+    </div>
 
-        let papers = bibtexParse.toJSON(text);
-        papers = papers.sort((a, b) => b['entryTags']['year'] - a['entryTags']['year'])
+    <div class="timeline-item">
+      <div class="timeline-org">Carnegie Mellon</div>
+      <div class="timeline-desc">
+        Computer science, machine learning, and design. Worked on
+        <a href="videos/symphony.m4v">speech systems on wearable computers with head-mounted displays</a>.
+        Set the groundwork for everything since.
+      </div>
+    </div>
+  </section>
 
-        papers.forEach((item, index) => {
-            const authors = item["entryTags"]["author"].split(' and').map(x => {
-                const names = x.split(', ');  
-                return names[1].trim() + ' ' + names[0].trim();
-            }).join(', ')
-            const year = item["entryTags"]["year"];
-            const proceedings = <span className='proceedings'>{item['entryTags']['booktitle']}</span>;
-            const title = item['entryTags']['title'].slice(1,-1);
-            const url = item['entryTags']['url'].split(' ')[0];
+  <section>
+    <div class="section-label">Publications</div>
+    <div id="publications"><p style="font-size:0.85rem;color:var(--muted)">Loading…</p></div>
+  </section>
 
-            const elem = <a href={'papers/'+url} key={index}>
-                <div className='paper'>
-                    {authors}. {title}. {proceedings} ({year}). <img className='external-link'></img>
-                </div>
-            </a>
+</main>
 
-            if (item['entryType'] == 'inproceedings') {
-                if (item['entryTags']['booktitle'].includes('(')) {
-                    otherElems.push(elem);
-                } else {
-                    conferenceElems.push(elem);
-                }
-            } else if (item['entryType'] == 'phdthesis') {
-                thesisElems.push(elem);
-            } else {
-                journalElems.push(elem);
-            }
-        });
+<footer>
+  <a href="/blog/">Writing →</a>
+</footer>
 
+<script>
+fetch('papers.bib').then(r => r.text()).then(text => {
+  const papers = bibtexParse.toJSON(text)
+    .sort((a, b) => b.entryTags.year - a.entryTags.year);
 
-        <div id="contact">
-        </div>
+  const groups = { thesis: [], conference: [], journal: [], other: [] };
 
+  papers.forEach(item => {
+    const tags = item.entryTags;
+    const authors = tags.author.split(' and ').map(a => {
+      const n = a.split(', ');
+      return ((n[1] || '').trim() + ' ' + n[0].trim()).trim();
+    }).join(', ');
+    const year   = tags.year;
+    const title  = tags.title.slice(1, -1);
+    const venue  = tags.booktitle || tags.journal || '';
+    const url    = 'papers/' + tags.url.split(' ')[0];
 
-        ReactDOM.render(
-            <div>
-                <div className='pubheader'>Thesis</div>
-                <div>{thesisElems}</div>
-                <div className='pubheader'>Conference</div>
-                <div>{conferenceElems}</div>
-                <div className='pubheader'>Journal</div>
-                <div>{journalElems}</div>
-                <div className='pubheader'>Other</div>
-                <div>{otherElems}</div>
-            </div>,
-            document.getElementById('publications')
-        );
-    });
+    const div = document.createElement('div');
+    div.className = 'paper';
+    div.innerHTML =
+      `<a href="${url}"><span class="paper-title">${title}</span></a>. ` +
+      `${authors}. <span class="paper-venue">${venue}</span> (${year}).`;
 
-  </script>
+    if (item.entryType === 'phdthesis') groups.thesis.push(div);
+    else if (item.entryType === 'inproceedings') {
+      (venue.includes('(') ? groups.other : groups.conference).push(div);
+    } else groups.journal.push(div);
+  });
+
+  const container = document.getElementById('publications');
+  container.innerHTML = '';
+
+  const labels = { thesis: 'Thesis', conference: 'Conference', journal: 'Journal', other: 'Other' };
+  ['thesis', 'conference', 'journal', 'other'].forEach(key => {
+    if (!groups[key].length) return;
+    const group = document.createElement('div');
+    group.className = 'pub-group';
+    group.innerHTML = `<div class="pub-group-label">${labels[key]}</div>`;
+    groups[key].forEach(p => group.appendChild(p));
+    container.appendChild(group);
+  });
+}).catch(() => {
+  document.getElementById('publications').innerHTML =
+    '<p style="font-size:0.85rem;color:var(--muted)">Could not load publications.</p>';
+});
+</script>
+
+</body>
 </html>
